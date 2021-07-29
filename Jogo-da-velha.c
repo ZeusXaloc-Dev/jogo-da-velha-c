@@ -40,7 +40,7 @@ int posicaVazia(int x, int y) {
     return 0;
 }
 
-int ganhouLinhas() {
+int ganhouuLinhas() {
     int i, j, igual = 1;
     for(i = 0; i < 3; i++) {
         for(j = 0; j < 2; j++) {
@@ -80,7 +80,7 @@ int ganhoudiagPrincipal() {
         return 0;
 }
 
-int ganhoudiagSecundaria() {
+int ganhouudiagSecundaria() {
     int i, igual = 1;
     for(i = 0; i < 2; i++) {
         if(eValido(jogo[i][3-i-1]) && jogo[i][3-i-1] == jogo[i+1][3-i-2])
@@ -116,7 +116,7 @@ void jogar() {
     do {
         do {
             imprimir();
-            printf("\nDigite a coordenada que deseja jogar: ");
+            printf("\nDigite a que deseja jogar: ");
             scanf("%d%d", &x, &y);
             valida = coordenadaEhValida(x, y);
             if(valida == 1)
@@ -139,18 +139,17 @@ void jogar() {
     if(ganhou != 0) {
         imprimir();
         if(ordem - 1 == 1)
-            printf("\nParabens. Voce venceu %s\n", jogador1);
+            printf("\nVoce ganhou %s\n", jogador1);
         else
-            printf("\nParabens. Voce venceu %s\n", jogador2);
+            printf("\nVoce ganhou %s\n", jogador2);
     } else
-        printf("\nQue feio. Ninguem venceu!\n\n");
+        printf("\Ninguem venceu!\n\n");
 }
 
 int main() {
 
     int op;
     printf("JOGO DA VELHA EM C\n\n");
-    printf("desenvolvido: @ZeusXaloc-Dev\n");
     printf("creditos: Wagner, Enormity, Ch4r0nN.\n ");
     printf("\nJogar 1 digite seu nome: ");
     fgets(jogador1, 50, stdin);
