@@ -19,14 +19,14 @@ void inicializarMatriz() {
     }
 }
 
-int eValido(char letra) {
+    int eValido(char letra) {
     if(letra == 'x' || letra == '0')
         return 1;
     else
         return 0;
 }
 
-int coordenadaEhValida(int x, int y) {
+    int coordenadaEhValida(int x, int y) {
     if(x >= 0 && x < 3) {
         if(y >= 0 && y < 3)
             return 1;
@@ -34,13 +34,13 @@ int coordenadaEhValida(int x, int y) {
     return 0;
 }
 
-int posicaVazia(int x, int y) {
+    int posicaVazia(int x, int y) {
     if(jogo[x][y] != 'x' && jogo[x][y] != '0')
         return 1;
     return 0;
 }
 
-int ganhouuLinhas() {
+    int ganhouLinhas() {
     int i, j, igual = 1;
     for(i = 0; i < 3; i++) {
         for(j = 0; j < 2; j++) {
@@ -54,7 +54,7 @@ int ganhouuLinhas() {
     return 0;
 }
 
-int ganhouColunas() {
+    int ganhouColunas() {
     int i, j, igual = 1;
     for(i = 0; i < 3; i++) {
         for(j = 0; j < 2; j++) {
@@ -68,7 +68,7 @@ int ganhouColunas() {
     return 0;
 }
 
-int ganhoudiagPrincipal() {
+    int ganhoudiagPrincipal() {
     int i, igual = 1;
     for(i = 0; i < 2; i++) {
         if(eValido(jogo[i][i]) && jogo[i][i] == jogo[i+1][i+1])
@@ -80,7 +80,7 @@ int ganhoudiagPrincipal() {
         return 0;
 }
 
-int ganhouudiagSecundaria() {
+    int ganhoudiagSecundaria() {
     int i, igual = 1;
     for(i = 0; i < 2; i++) {
         if(eValido(jogo[i][3-i-1]) && jogo[i][3-i-1] == jogo[i+1][3-i-2])
